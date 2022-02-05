@@ -3,7 +3,7 @@
 # 분류: ?
 # 난이도: 실버 5 
 # https://www.acmicpc.net/problem/11723
-# 문제 풀이 핵심: 메모리 아끼기
+# 문제 풀이 핵심: 메모리 아끼기 - 비트 연산
 
 import sys
 

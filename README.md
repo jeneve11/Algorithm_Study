@@ -30,6 +30,10 @@ for i in list:
     print(i)
 ```
 
+``` python
+print(' '.join(list))
+```
+
 ### 배열 정렬
 ``` python
 list = [A, B, C, D, E]
@@ -106,3 +110,31 @@ def getPrimeList(num):
         for j in range(2*i, num + 1, i):
             listA[j] == 0
 ```
+
+### 기본 자료 구조
+#### list
+- [a, b, c, d, e]
+- 내장 함수: append, pop, index...
+- 데이터 접근이 O(1)으로 매우 빠르다.
+- 대신 pop(0), index(), insert() 등의 함수가 O(N)으로 느리다.
+
+#### set
+- {a, b, c, d, e}
+- 중복을 허용하지 않음
+
+#### dictionary
+- {}
+``` python
+from collections import defaultdict
+
+dict_ex = defaultdict(list)
+print(dict_ex) # defaultdict(<class 'list'>, {})
+print(dict_ex[0]) # [] - defaultdict에 없는 key를 호출할 때 dict_ex[0] = []로 자동 생성
+```
+#### stack
+#### queue
+#### deque
+- 내장함수: popleft, appendleft
+- 데이터 접근이 O(N)으로 느림
+- 대신 데이터 추가/삭제가 O(1)
+#### tuple
