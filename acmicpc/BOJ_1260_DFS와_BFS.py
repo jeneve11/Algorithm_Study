@@ -17,7 +17,6 @@ for _ in range(lines):
     graph_dict[v].append(i)
 
 
-
 # BFS
 visited_BFS = []
 queue = deque([start_point])
@@ -48,7 +47,6 @@ while stack:
         visited_DFS.append(node_now)
         if node_now in graph_dict:
             stack += [i for i in graph_dict[node_now] if i not in visited_DFS]
-
 
 
 # 결괏값 출력

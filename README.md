@@ -124,6 +124,7 @@ def getPrimeList(num):
 
 #### dictionary
 - {}
+- defaultdict 이용하면 편하게 사용할 수 있음
 ``` python
 from collections import defaultdict
 
