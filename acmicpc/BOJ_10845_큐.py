@@ -30,7 +30,9 @@ for i in range(int(input())):
         else: print(1)
 
     if temp_input == 'front':
-        print(queue[0])
+        if queue: print(queue[0])
+        else: print(-1)
 
     if temp_input == 'back':
-        print(queue[-1])
+        if queue: print(queue[-1])
+        else: print(-1)
