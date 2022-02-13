@@ -3,7 +3,7 @@
 # 분류: 수학
 # 난이도: 실버 5
 # https://www.acmicpc.net/problem/2609
-# 문제 풀이 핵심: 유클리드 알고리즘
+# 문제 풀이 핵심: 유클리드 호제법
 
 num1, num2 = map(int, input().split())
 mult = num1 * num2

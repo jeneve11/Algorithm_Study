@@ -111,6 +111,25 @@ def getPrimeList(num):
             listA[j] == 0
 ```
 
+### 최대공약수 - 유클리드 호제법
+- 최대공약수 구하는 알고리즘
+- 고전 로직보다는 확실히 빠름
+``` python
+# num1 >= num2임을 보장
+if num1 < num2:
+    num1, num2 = num2, num1
+
+while num2:
+    rest = num1 % num2
+    num1 = num2
+    num2 = rest
+
+print(num1) # 최대공약수
+```
+
+### 최소공배수 - 두 수의 곱 = 최소공배수 * 최대공약수
+- lcm = (num1 * num2) / gcd(num1, num2)
+
 ### 기본 자료 구조
 #### list
 - [a, b, c, d, e]
@@ -125,6 +144,7 @@ def getPrimeList(num):
 #### dictionary
 - {}
 - defaultdict 이용하면 편하게 사용할 수 있음
+- lambda: 1 등으로 기본 수치 설정 가능
 ``` python
 from collections import defaultdict
 
