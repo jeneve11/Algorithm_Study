@@ -130,6 +130,10 @@ print(num1) # 최대공약수
 ### 최소공배수 - 두 수의 곱 = 최소공배수 * 최대공약수
 - lcm = (num1 * num2) / gcd(num1, num2)
 
+### 그래프
+- DFS: 최단 경로 탐색, deque로 구현
+- BFS: 모든 경로 탐색, stack으로 구현
+
 ### 기본 자료 구조
 #### list
 - [a, b, c, d, e]
@@ -151,11 +155,25 @@ from collections import defaultdict
 dict_ex = defaultdict(list)
 print(dict_ex) # defaultdict(<class 'list'>, {})
 print(dict_ex[0]) # [] - defaultdict에 없는 key를 호출할 때 dict_ex[0] = []로 자동 생성
+dict_ex2 = defaultdict(lambda: -1) # 없는 key 호출 시 -1로 생성되는 int형 dictionary 생성
 ```
 #### stack
 #### queue
-#### deque
+#### deque(double ended queue)
 - 내장함수: popleft, appendleft
 - 데이터 접근이 O(N)으로 느림
 - 대신 데이터 추가/삭제가 O(1)
 #### tuple
+#### heap(priority queue)
+- heapq 모듈 import하여 사용
+``` python
+import heapq
+
+heap = [] # list 기반
+heapq.heappush(heap, num) # num을 heap에 추가
+heap[0] # min(heap) 접근 - O(1)
+heapq.nlargest(len(heap), heap)[0] # max(heap) 접근 - O(N) 이상
+
+listA = [7, 1, 5]
+heapq.heapify(listA, num) # list를 heap으로 변환?
+```
