@@ -8,7 +8,6 @@
 
 import sys
 
-
 for _ in range(int(input())):
     if int(sys.stdin.readline().rstrip()) % 2: print('odd')
     else: print('even')
