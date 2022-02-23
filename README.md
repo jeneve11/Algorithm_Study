@@ -66,9 +66,11 @@ print(list(set(list)).sort()) # [A, B, C, D]
 dict_A = {}
 dict_A['key'] = 'value'
 print(dict_A['key']) = 'value'
+dict_A.keys() # ['key']
+dict_A.values() # ['value']
+dict_A.items() # [('key', 'value')]
 ```
 - key-value 구조를 가지는 자료 구조.
-
 
 ### 문자열 내의 문자가 숫자인지 확인
 ``` python
