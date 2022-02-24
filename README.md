@@ -18,21 +18,54 @@ sys.stdin.readline().rstrip()
 - input()과 같지만 여러 줄 (more than 1,000 lines) 입력 받을 때 훨씬 빠르다.
 - rstrip()은 문자열 우측 개행문자를 제거해준다.
 
+### 재귀 문제 팁
+``` python
+import sys
+sys.setrecursionlimit(10 ** 6)
+```
+- 파이썬 기본 재귀 제한 1,000회에서 재귀 제한을 1,000,000회로 늘리는 설정
+- 이거 없으면 대부분의 재귀문제에서 런타임 에러 보게 됨
+
+### *
+``` python
+list_ex = [1, 2, 3]
+print(list_ex) # [1, 2, 3]
+print(*list_ex) # 1 2 3
+
+```
+- iter 자료형 내부 값들을 unpacking하여 반환함
+
 ### 배열 순회
 ``` python
 for i, num in enumerate(list):
     print(i, num)
 ```
 
+### zip과 enumerate
+``` python
+list_ex = ['A', 'B', 'C']
+list_ex2 = ['a', 'b', 'c']
+
+enumerate(list_ex) # [(0, 'A'), (1, 'B'), (2, 'C')]
+zip(list_ex, list_ex2) # [('A', 'a'), ('B', 'b'), ('C', 'c')]
+
+for i, v in enumerate(list_ex):
+    pass
+
+for v1, v2 in zip(list_ex, list_ex2):
+    pass
+
+```
+
 ### 배열 출력
 ``` python
-for i in list:
-    print(i)
+for i in list: print(i)
 ```
 
 ``` python
 print(' '.join(list))
 ```
+- 이 코드는 문자열 리스트에서만 가능
 
 ### 배열 정렬
 ``` python
@@ -52,6 +85,15 @@ print(list(set(list)).sort()) # [A, B, C, D]
 
 - set()을 사용하면 중복이 제거된다! 단 순서도 뒤섞이기 때문에 다시 sort 해준다.
 - for문을 이용하여 중복을 제거 할 수도 있다.
+
+### 순열과 조합
+``` python
+import itertools
+
+list_ex = [1, 2, 3, 4]
+itertools.combinations(list_ex, 2) # [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
+itertools.permutations(list_ex, 2)
+```
 
 ### set(집합)
 - 집합 자료형으로, 중복을 허용하지 않음
@@ -76,6 +118,14 @@ dict_A.items() # [('key', 'value')]
 ``` python
 str1 = '50'
 print(str1.isdigit()) # true 반환
+```
+
+### 반올림, 올림, 버림
+``` python
+num = 99/2
+round(num) # 반올림
+math.ceil(num) # 50 - 올림
+int(num) # 49 - 버림 or math.trunc
 ```
 
 ### 소수 판별법
