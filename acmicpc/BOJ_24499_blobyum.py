@@ -1,8 +1,8 @@
-# 문제 푸는 날짜: 220218
-# BOJ 12865번 평범한 배낭
-# 분류: DP
-# 난이도: 골드 5
-# https://www.acmicpc.net/problem/12865
+# 문제 푸는 날짜: 220221
+# BOJ 24499번 blobyum
+# 분류: 슬라이딩 윈도우
+# 난이도: 실버 4
+# https://www.acmicpc.net/problem/24499
 # 문제 풀이 핵심: 
 
 N = int(input())

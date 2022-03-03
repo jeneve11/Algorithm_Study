@@ -1,3 +1,11 @@
+# 문제 푸는 날짜: 220221
+# BOJ 24500번 blobblsuh
+# 분류: 비트 연산
+# 난이도: 실버 2
+# https://www.acmicpc.net/problem/24500
+# 문제 풀이 핵심: 
+
+
 N = int(input())
 
 target = ''
