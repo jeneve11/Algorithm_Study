@@ -120,6 +120,14 @@ str1 = '50'
 print(str1.isdigit()) # true 반환
 ```
 
+### float data가 정수인지 소수인지 확인
+``` python
+>>> (1.0).is_integer()
+True
+>>> (1.555).is_integer()
+False
+```
+
 ### 반올림, 올림, 버림
 ``` python
 num = 99/2
