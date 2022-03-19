@@ -1,6 +1,8 @@
 # Algorithm_Study
 코테 대비 알고리즘 공부 ( 사용언어: Python ) 
 
+[![Solved.ac
+프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kws4022)](https://solved.ac/kws4022)
 
 ## 유용한 문법
 
