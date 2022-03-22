@@ -204,8 +204,8 @@ print(num1) # 최대공약수
 - lcm = (num1 * num2) / gcd(num1, num2)
 
 ### 그래프
-- DFS: 최단 경로 탐색, deque로 구현
-- BFS: 모든 경로 탐색, stack으로 구현
+- DFS: 모든 경로 탐색 시 이용, stack로 구현
+- BFS: 최단 경로 탐색 시 이용, deque으로 구현 (from collections import deque)
 
 ### 기본 자료 구조
 #### list
