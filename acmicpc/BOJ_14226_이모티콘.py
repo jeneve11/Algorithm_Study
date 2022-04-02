@@ -1,12 +1,11 @@
-# 문제 푸는 날짜: 2203nn
-# BOJ nnnn번 예시
-# 분류: 
-# 난이도: 실버 1
-# https://www.acmicpc.net/problem/nnnn
+# 문제 푸는 날짜: 220329
+# BOJ 14226번 이모티콘
+# 분류: DP + BFS
+# 난이도: 골드 5
+# https://www.acmicpc.net/problem/14226
 # 문제 풀이 핵심: 
 
 from collections import deque
-import sys
 
 S = int(input())
 dp = []
