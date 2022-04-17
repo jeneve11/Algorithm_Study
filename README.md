@@ -241,11 +241,15 @@ dict_ex2 = defaultdict(lambda: -1) # 없는 key 호출 시 -1로 생성되는 in
 #### tuple
 #### heap(priority queue)
 - heapq 모듈 import하여 사용
+- 목록의 최솟값이나 최댓값에 접근할 때 O(1)로 아주 빠름
+- 기본적으로 최소 heap만 지원함으로 -num을 저장해서 최솟값을 빼내고 다시 -1을 곱하는 식으로 편법 최대 heap 구현이 가능하다
+
 ``` python
 import heapq
 
 heap = [] # list 기반
 heapq.heappush(heap, num) # num을 heap에 추가
+heapq.heappop(heap) # min(heap) 반환하면서 heap에서 제거
 heap[0] # min(heap) 접근 - O(1)
 heapq.nlargest(len(heap), heap)[0] # max(heap) 접근 - O(N) 이상
 
