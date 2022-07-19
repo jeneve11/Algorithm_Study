@@ -177,11 +177,12 @@ def isPrime(num):
 - 2 ~ num 사이의 소수 list를 얻고 싶다면
 ``` python
 def getPrimeList(num):
-    listA = [0]* (num + 1)
-    for i in range(2, math.ceil(num ** 1/2)):
-        if listA[i] == 0: continue
-        for j in range(2*i, num + 1, i):
-            listA[j] == 0
+    prime_list = [False, False] + [True]*(num-1)
+    for i in range(2, math.ceil(num ** (1/2))):
+        if prime_list[i]:
+            for j in range(2*i, num+1, i):
+                prime_list[j] = False
+    return [i for i, v in enumerate(prime_list) if v]
 ```
 
 ### 최대공약수 - 유클리드 호제법
