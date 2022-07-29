@@ -10,5 +10,4 @@ def solution(citations):
         if v >= (i+1): answer = i+1
         else: break
     
-    
     return answer
