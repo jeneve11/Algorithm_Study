@@ -314,3 +314,14 @@ ON I.ANIMAL_ID = O.ANIMAL_ID
 WHERE I.DATETIME > O.DATETIME
 ORDER BY I.DATETIME
 ```
+
+### 윈도우 함수
+- RANK: 공동 순위만큼 건너뜀 (ex: 1, 2, 2, 4...)
+- DENSE_RANK: 공동 순위를 뛰어넘지 않음 (ex: 1, 2, 2, 3...)
+- ROW_NUMBER: 공동 순위를 무시함 (ex: 1, 2, 3, 4...)
+- 형식: RANK() OVER ([PARTITION BY A] ORDER BY B ASC) # PARTITION BY ~ 문은 선택사항
+
+``` MySQL
+SELECT score, DENSE_RANK() OVER (ORDER BY SCORE DESC) AS 'rank'
+FROM Scores
+```
