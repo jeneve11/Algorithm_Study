@@ -1,10 +1,10 @@
 # Algorithm_Study
-코테 대비 알고리즘 공부 ( 사용언어: Python ) 
+코테 대비 알고리즘 공부 ( 사용언어: Python, MySQL ) 
 
 [![Solved.ac
 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kws4022)](https://solved.ac/kws4022)
 
-## 유용한 문법
+## Python 유용한 문법
 
 ### 여러 숫자 한 줄에 입력받을 때
 ``` python
@@ -208,6 +208,18 @@ print(num1) # 최대공약수
 - DFS: 모든 경로 탐색 시 이용, stack로 구현
 - BFS: 최단 경로 탐색 시 이용, deque으로 구현 (from collections import deque)
 
+### 반복(itertools)
+- itertools library를 이용
+- 완전 탐색(Brute force)를 사용할 수 있는 상황일 때 자주 사용하는 library
+
+``` python
+from itertools import combinations, permutations
+
+list_ex = ['a', 'b', 'c']
+perm = permuations(list_ex, 2) # [['a', 'b'], ['a', 'c'], ['b', 'c'], ['c', 'a'], ['c', 'b'], ['b', 'a']]
+comb = combinations(list_ex, 2) # [['a', 'b'], ['a', 'c'], ['b', 'c']]
+```
+
 ### 기본 자료 구조
 #### list
 - [a, b, c, d, e]
@@ -234,11 +246,16 @@ print(dict_ex[0]) # [] - defaultdict에 없는 key를 호출할 때 dict_ex[0] =
 dict_ex2 = defaultdict(lambda: -1) # 없는 key 호출 시 -1로 생성되는 int형 dictionary 생성
 ```
 #### stack
+- python에서는 list로 주로 구현하는 편
+
 #### queue
 #### deque(double ended queue)
 - 내장함수: popleft, appendleft
-- 데이터 접근이 O(N)으로 느림
-- 대신 데이터 추가/삭제가 O(1)
+- 좌우 끝단 데이터 추가/삭제가 O(1)으로 아주 빠름!
+- 대신 임의 데이터 접근이 O(N)으로 느림
+- 양쪽에 모두 추가/삭제를 해야 하고, 임의 데이터 접근 할 일이 없을 때 아주 좋음
+- BFS 구현에 많이 사용함
+
 #### tuple
 #### heap(priority queue)
 - heapq 모듈 import하여 사용
@@ -256,4 +273,44 @@ heapq.nlargest(len(heap), heap)[0] # max(heap) 접근 - O(N) 이상
 
 listA = [7, 1, 5]
 heapq.heapify(listA, num) # list를 heap으로 변환?
+```
+
+## MySQL 유용한 문법
+### SELECT문 기본 구조
+- 실행 순서: FROM - (ON) - (JOIN) - WHERE - GROUP BY - HAVING - SELECT - (DISTINCT) - ORDER BY
+``` MySQL
+SELECT 
+FROM
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+```
+
+### COALESCE
+- COALESCE(A, B, C) # NULL이 아닌 첫 요소를 반환
+
+### IF
+- IF(조건문, 참일때, 거짓일때)
+
+### LIMIT문
+- LIMIT(N): TOP N개만 출력
+- LIMIT(N, M): 2번째 idx부터 M개 출력됨 # LIMIT(2, 2)면 2, 3번째 출력
+- ORDER BY문 이후에 실행됨
+
+``` MySQL
+SELECT NAME
+FROM ANIMAL_INS
+ORDER BY DATETIME ASC
+LIMIT 1
+```
+
+### JOIN Query
+- 문법: FROM A (조인 종류) B ON (조건문)
+``` MySQL
+SELECT I.ANIMAL_ID, I.NAME
+FROM ANIMAL_INS I INNER JOIN ANIMAL_OUTS O
+ON I.ANIMAL_ID = O.ANIMAL_ID
+WHERE I.DATETIME > O.DATETIME
+ORDER BY I.DATETIME
 ```
