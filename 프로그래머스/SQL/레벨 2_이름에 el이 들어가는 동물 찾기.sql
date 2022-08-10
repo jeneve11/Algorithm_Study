@@ -1,0 +1,7 @@
+# 프로그래머스_레벨 2_이름에 el이 들어가는 동물 찾기
+# 220809
+
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE ANIMAL_TYPE = 'Dog' and NAME LIKE '%EL%'
+ORDER BY NAME
