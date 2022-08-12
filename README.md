@@ -287,6 +287,14 @@ HAVING
 ORDER BY
 ```
 
+### UPDATE문 기본 구조
+- 기본 구조: UPDATE - SET - WHERE
+``` MySQL
+UPDATE Salary
+SET sex = 'f'
+WHERE sex = m'
+```
+
 ### COALESCE
 - COALESCE(A, B, C) # NULL이 아닌 첫 요소를 반환
 
@@ -294,9 +302,9 @@ ORDER BY
 - IF(조건문, 참일때, 거짓일때)
 
 ### LIMIT문
-- LIMIT(N): TOP N개만 출력
-- LIMIT(N, M): 2번째 idx부터 M개 출력됨 # LIMIT(2, 2)면 2, 3번째 출력
-- ORDER BY문 이후에 실행됨
+- LIMIT N: TOP N개만 출력
+- LIMIT N, M: 2번째 idx부터 M번째 idx까지 출력됨 # LIMIT(2, 3)면 2, 3번째 출력
+- 맨 마지막에 실행됨(ORDER BY, DISTINCT 이후)
 
 ``` MySQL
 SELECT NAME
