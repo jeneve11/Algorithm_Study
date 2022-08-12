@@ -295,6 +295,13 @@ SET sex = 'f'
 WHERE sex = m'
 ```
 
+### DELETE문 기본 구조
+- 기본 구조: DELETE [FROM] - WHERE
+``` MySQL
+DELETE [FROM] Salary
+WHERE sex = m'
+```
+
 ### COALESCE
 - COALESCE(A, B, C) # NULL이 아닌 첫 요소를 반환
 
@@ -327,6 +334,8 @@ ORDER BY I.DATETIME
 - RANK: 공동 순위만큼 건너뜀 (ex: 1, 2, 2, 4...)
 - DENSE_RANK: 공동 순위를 뛰어넘지 않음 (ex: 1, 2, 2, 3...)
 - ROW_NUMBER: 공동 순위를 무시함 (ex: 1, 2, 3, 4...)
+- LAG: 이전 행 값을 반환 (이전 행이 없으면 NULL 반환)
+- LEAD: 이후 행 값을 반환 (이전 행이 없으면 NULL 반환)
 - 형식: RANK() OVER ([PARTITION BY A] ORDER BY B ASC) # PARTITION BY ~ 문은 선택사항
 
 ``` MySQL
