@@ -299,7 +299,7 @@ WHERE sex = m'
 - 기본 구조: DELETE [FROM] - WHERE
 ``` MySQL
 DELETE [FROM] Salary
-WHERE sex = m'
+WHERE sex = 'm'
 ```
 
 ### COALESCE
@@ -307,6 +307,15 @@ WHERE sex = m'
 
 ### IF
 - IF(조건문, 참일때, 거짓일때)
+
+### SUBSTR
+- 부분 문자열 함수
+``` MySQL
+# Employees Table에서 name의 첫 문자가 'M'인 row들을 출력
+SELECT *
+FROM Employees
+SUBSTR(name, 1, 1) # name의 '1'번째 문자부터 '1'개만 반환
+```
 
 ### LIMIT문
 - LIMIT N: TOP N개만 출력
