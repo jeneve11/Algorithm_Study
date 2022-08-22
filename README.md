@@ -101,6 +101,14 @@ itertools.permutations(list_ex, 2)
 - 집합 자료형으로, 중복을 허용하지 않음
 - add(), remove(), discard(), clear() 등의 내장 함수가 있음
 
+``` python
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
+print(set1 & set2) # {3, 4} - 교집합
+print(set1 | set2) # {1, 2, 3, 4, 5, 6} - 합집합
+print(set1 - set2) # {1, 2} - 차집합
+```
+
 ### set.remove() vs set.discard()
 - set.remove(20) 호출 시 20이 set 내에 없다면 keyError를 반환한다.
 - set.discard(20)은 호출 시 20이 있다면 제거, 없다면 keyError를 반환하지 않는다(아무 행동도 하지 않음).
