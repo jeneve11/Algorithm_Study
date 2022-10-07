@@ -37,12 +37,6 @@ print(*list_ex) # 1 2 3
 ```
 - iter 자료형 내부 값들을 unpacking하여 반환함
 
-### 배열 순회
-``` python
-for i, num in enumerate(list):
-    print(i, num)
-```
-
 ### zip과 enumerate
 ``` python
 list_ex = ['A', 'B', 'C']
@@ -52,11 +46,10 @@ enumerate(list_ex) # [(0, 'A'), (1, 'B'), (2, 'C')]
 zip(list_ex, list_ex2) # [('A', 'a'), ('B', 'b'), ('C', 'c')]
 
 for i, v in enumerate(list_ex):
-    pass
+    print(i, v) # (0, 'A'), (1, 'B'), (2, 'C')
 
 for v1, v2 in zip(list_ex, list_ex2):
-    pass
-
+    print(v1, v2) # ('A', 'a'), ('B', 'b'), ('C', 'c')
 ```
 
 ### 배열 출력
@@ -79,10 +72,14 @@ new_list = sorted(list)
 - sort는 반환값 없이 기존 list를 수정하고,
 sorted 함수는 기존 list에는 변화 없이 새로운 list를 만들어서 반환한다.
 
+``` python
+list.sort(key=lambda x: (x[0], x[-1]))
+```
+
 ### 배열 내 중복 제거
 ``` python
-list = [A, B, C, D, D]
-print(list(set(list)).sort()) # [A, B, C, D]
+listA = [A, B, C, D, D]
+print(list(set(listA)).sort()) # [A, B, C, D]
 ```
 
 - set()을 사용하면 중복이 제거된다! 단 순서도 뒤섞이기 때문에 다시 sort 해준다.
@@ -322,7 +319,25 @@ WHERE sex = 'm'
 # Employees Table에서 name의 첫 문자가 'M'인 row들을 출력
 SELECT *
 FROM Employees
-SUBSTR(name, 1, 1) # name의 '1'번째 문자부터 '1'개만 반환
+WHERE SUBSTR(name, 1, 1) = 'M' # name의 '1'번째 문자부터 '1'개만 반환
+```
+
+### LIKE문
+- 문자열 함수
+- %: 0개 이상의 문자열
+- _: 1개의 문자
+
+``` MySQL
+SELECT *
+FROM EMPLOYEES
+WHERE Name LIKE '_우성' # 이름이 우성인 사람
+```
+
+### IN문
+``` MySQL
+SELECT *
+FROM EMPLOYEES
+WHERE Name IN ('김우성', '이우성', '박우성') # 이름이 김우성, 이우성, 박우성인 사람
 ```
 
 ### LIMIT문
